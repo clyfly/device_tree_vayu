@@ -11,8 +11,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configurations
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
-# Inherit common AOSP configurations
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit common Afterlife configurations
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
+
+# After Life config
+AFTERLIFE_GAPPS := true
+AFTERLIFE_CORE := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+BUILD_AOSP_CAMERA := false
+AFTERLIFE_MAINTAINER := xydenwah
+
+# Device Misc Config
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_AOSP_RECOVERY := true
